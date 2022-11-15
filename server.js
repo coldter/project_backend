@@ -1,4 +1,6 @@
 'use strict'
+// use express async handler errors middleware
+require('express-async-errors')
 const express = require('express')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
@@ -29,6 +31,15 @@ app.use('/students', require('./routes/student'))
 app.use('/auth', require('./routes/auth'))
 app.use('/notif', require('./routes/notif'))
 
-const PORT = env.PORT || 3000
+// error handler
+app.use((err, req, res, next) => {
+  console.log(err)
+  res.status(400).json({
+    status: false,
+    message: 'Something went wrong',
+  })
+})
+
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => console.log(`Server running on PORT: ${PORT}`))

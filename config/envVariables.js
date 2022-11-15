@@ -19,4 +19,3 @@ if (envResult.error) {
 const { parsed: env } = envResult
 
 module.exports = env
-console.log('🔥 ~ env', env)
