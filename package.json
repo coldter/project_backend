@@ -4,22 +4,26 @@
   "description": "The backend for the app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "start:dev": "nodemon server.js",
+    "start": "node server.js",
+    "format": "prettier --write \"./**/*.js\""
   },
   "author": "Debadree Chatterjee",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "dotenv": "^8.6.0",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.20",
+    "mongoose": "^5.13.15",
     "morgan": "^1.10.0",
-    "multer": "^1.4.2",
-    "nodemon": "^2.0.4",
+    "multer": "^1.4.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
   }
 }
